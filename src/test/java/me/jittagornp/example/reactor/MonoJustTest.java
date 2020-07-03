@@ -7,7 +7,7 @@ import reactor.test.StepVerifier;
 /**
  * @author jitta
  */
-public class MonoTest {
+public class MonoJustTest {
 
     @Test
     public void shouldBeJittagornp_whenInputIsMonoJittagornp() {
