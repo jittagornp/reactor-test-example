@@ -7,17 +7,17 @@ import reactor.test.StepVerifier;
 /**
  * @author jitta
  */
-public class MonoEmptyTest {
+public class MonoJustOrEmptyTest {
 
     @Test
-    public void shouldBeComplete_whenInputIsMonoEmpty() {
+    public void shouldBeComplete_whenInputIsMonoJustOrEmptyNull() {
 
-        final Mono<String> input = Mono.empty();
+        final Mono<String> input = Mono.justOrEmpty(null);
 
         StepVerifier.create(input)
                 .expectNextCount(0)
-                .expectComplete()
-                .verify();
+                .verifyComplete();
+
     }
 
 }

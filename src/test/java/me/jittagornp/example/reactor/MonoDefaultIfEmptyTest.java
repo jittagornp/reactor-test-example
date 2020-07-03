@@ -7,12 +7,13 @@ import reactor.test.StepVerifier;
 /**
  * @author jitta
  */
-public class MonoJustTest {
+public class MonoDefaultIfEmptyTest {
 
     @Test
-    public void shouldBeJittagornp_whenInputIsMonoJustJittagornp() {
+    public void shouldBeJittagornp_whenInputIsMonoJustOrEmpty() {
 
-        final Mono<String> input = Mono.just("jittagornp");
+        final Mono<Object> input = Mono.justOrEmpty(null)
+                .defaultIfEmpty("jittagornp");
 
         StepVerifier.create(input)
                 .expectNext("jittagornp")
